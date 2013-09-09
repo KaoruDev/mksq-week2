@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Guess the Number!</title>
+</head>
+<body>
+<label>Pick a Number from 1-100:</label>
+<label id="response"></label>
+<br>
+<input id="user-input" type="text" />
+<input id="submit-button" type="button" value="Guess" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+$('#response').text('Hi there!');
+$('#submit-button').on('click', function() {
+	var input = $('#user-input').val();
+	alert('You typed in: ' + input);
+});
+  // var name = prompt("What's your name?")
+  // alert('Welcome back ' + name);
+
+ //  var secretNumber = parseInt(Math.random() * 100, 10) + 1;
+ //  var guessCount = 0
+
+ //  var guess = function() {
+ //  	guessCount += 1;
+ //  	if(guessCount < 4){
+ //  	answer = prompt("Guess a number between 1 and 100!");
+	//   if(answer === secretNumber.toString()){
+	// 		alert("Awesomeness, you got it right!");
+	//   	}
+	//   else if(answer > secretNumber){
+ //  			alert("Guess lower!");
+	//   		guess();
+	//   }
+	//   else if(answer < secretNumber){
+	//   		alert("Guess higher!");
+	// 		guess();
+ // 		}else{
+ // 			alert("Dude that's not a number!")
+	// 	}
+	// }
+ //  }
+ //  alert(secretNumber);
+ //  guess();
+
+</script>
+
+</body>
+</html>
