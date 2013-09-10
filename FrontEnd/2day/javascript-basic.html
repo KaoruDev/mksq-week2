@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+ var butler = function(x){
+ 	x();
+ };
+
+ var greet = function(){
+ 	alert('hi');
+ };
+
+ var yell = function(phrase){
+	return phrase.toUpperCase() + "!";
+ };
+
+ var ask = function(phrase){
+ 	return "Can you please " + phrase + "?";
+ };
+
+ var serveMessage = function(phrase1, phrase2, func){
+ 	return (phrase1 + ": " + func(phrase2));
+ };
+
+ serveMessage("Gilbert", "guy", function(phrase){
+ 	return "is the go to " + phrase;
+ });
+
+
+</script>
+
+</body>
+</html>
