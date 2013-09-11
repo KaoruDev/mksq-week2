@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 		for(var i = 0; i < 3; ){
 			current_rand = [parseInt(Math.random() * 100, 10) + 1];
-			if(land_mine.indexOf(current_rand) === -1){
+			if(land_mine.indexOf(current_rand) === -1 && current_rand != secretNumber){
 				land_mine.push(current_rand.toString());
 				i++;
 				console.log(current_rand + " added!");

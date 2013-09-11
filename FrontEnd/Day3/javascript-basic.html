@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Javascript Bare</title>
+</head>
+<body>
+
+<script type="text/javascript">
+var Person = function(name){
+	this.name = name;
+};
+
+var Car = function(color, person){
+	this.color = color,
+	this.driver = person,
+	this.ignite = function(){
+		if(this.driver){
+			return "Driver is required.";
+		}
+		else{
+			return "Vroom!";
+		}
+	}
+}
+
+
+var bob = new Person('Bob');
+
+var car = new Car('black', bob);
+console.log('New Car:', car);
+console.log('Is it black?', car.color === 'black');
+console.log('Who is the driver?', car.driver);
+console.log('Is the driver\'s name Bob?', car.driver.name === 'Bob');
+console.log('Starting the car:', car.ignite());
+console.log('Did it start?', car.ignite() === 'Vroom!');
+
+var driverlessCar = new Car('blue');
+console.log('Another Car:', driverlessCar);
+console.log('Is it blue?', driverlessCar.color === 'blue');
+console.log('Who is the driver?', car.driver);
+console.log('Starting the car:', driverlessCar.ignite());
+console.log('Did it fail to start?', driverlessCar.ignite() !== 'Vroom!');
+
+</script>
+
+</body>
+</html>
