@@ -1,8 +1,10 @@
-$(document).ready(function(){
+$(document).ready(function () {
+	var games_won = 0;
+
 	window.Game = function(mines){
 		this.secretNumber = parseInt(Math.random() * 100, 10) + 1;
 		this.num_guess = 3;
-		this.games_won = 0;
+		
 		this.land_mine = [];
 		this.mines = mines === undefined ? true : false;
 
@@ -22,9 +24,9 @@ $(document).ready(function(){
 			if(this.num_guess > 1){
 				this.num_guess -= 1;
 				if(answer === this.secretNumber.toString()){
-					this.games_won += 1;
+					games_won += 1;
 					$('#response').text("Congratulations you guessed correctly!");
-					$('#games-won').text("Woohoo you won " + this.games_won + " games!!");
+					$('#games-won').text("Woohoo you won " + games_won + " games!!");
 				}
 				else if(this.land_mine.indexOf(answer) != -1){
 					$('#response').text("OH NOES you landed on the land mine!!!!!");
@@ -71,7 +73,8 @@ $(document).ready(function(){
 		};
 
 		this.restart = function(){
-			window.game.land_mine = [];
+			console.log(this);
+			this.land_mine = [];
 			window.game.num_guess = 3;
 			if($("#minesCheckBox").is(':checked')){
 				window.game.mines = true;
